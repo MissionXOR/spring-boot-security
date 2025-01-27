@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for Animations -->
+    <style>
+        body {
+            background: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .slide-up {
+            animation: slideUp 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .blog-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background: #343a40;
+            color: white;
+            padding: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MyBlog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/profile">Profile</a>
+                    </li>
+                    <li class="nav-item btn-danger">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-primary text-white text-center py-5 fade-in">
+        <div class="container">
+            <h4 class="fw-bold">Welcome to MyBlog</h1>
+            
+           
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section id="blog" class="container my-5">
+        <h2 class="text-center mb-4 slide-up">Latest Articles</h2>
+        <div class="row g-4">
+            <!-- Blog Post 1 -->
+            <div class="col-md-4">
+                <div class="card blog-card shadow-sm slide-up">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Blog 1">
+                    <div class="card-body">
+                        <h5 class="card-title">The Art of Productivity</h5>
+                        <p class="card-text">Learn tips and tricks to maximize your productivity and achieve more in less time.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Post 2 -->
+            <div class="col-md-4">
+                <div class="card blog-card shadow-sm slide-up">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Blog 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Healthy Eating Habits</h5>
+                        <p class="card-text">Explore the benefits of balanced nutrition and how to maintain a healthy lifestyle.</p>
+                        <a href="#" class="btn btn-success">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Post 3 -->
+            <div class="col-md-4">
+                <div class="card blog-card shadow-sm slide-up">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Blog 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Travel on a Budget</h5>
+                        <p class="card-text">Discover how to plan your dream vacation without breaking the bank.</p>
+                        <a href="#" class="btn btn-warning">Read More</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Blog Post 1 -->
+            <div class="col-md-4">
+                <div class="card blog-card shadow-sm slide-up">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Blog 1">
+                    <div class="card-body">
+                        <h5 class="card-title">The Art of Productivity</h5>
+                        <p class="card-text">Learn tips and tricks to maximize your productivity and achieve more in less time.</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Post 2 -->
+            <div class="col-md-4">
+                <div class="card blog-card shadow-sm slide-up">
+                    <img src="https://images.app.goo.gl/k5AwTn8HLE3R2H6q7/350x200" class="card-img-top" alt="Blog 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Healthy Eating Habits</h5>
+                        <p class="card-text">Explore the benefits of balanced nutrition and how to maintain a healthy lifestyle.</p>
+                        <a href="#" class="btn btn-success">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Blog Post 3 -->
+            <div class="col-md-4">
+                <div class="card blog-card shadow-sm slide-up">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Blog 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Travel on a Budget</h5>
+                        <p class="card-text">Discover how to plan your dream vacation without breaking the bank.</p>
+                        <a href="#" class="btn btn-warning">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p>&copy; 2025 MyBlog. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #000000;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-content {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.home-content h1 {
+    font-size: 4.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-content h3 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: red; /* Updated color for h3 */
+}
+
+.home-content p {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+.breaking-news-headline {
+    font-size: 1.2rem;
+    display: inline-block;
+    color: red; /* Updated color for the headline text */
+    margin-left: 1rem;
+    animation: marquee 10s linear infinite;
+}
+.breaking-news-headline1 {
+    font-size: 1.2rem;
+    display: inline-block;
+    color: green; /* Updated color for the headline text */
+    margin-left: 1rem;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.home-img {
+    flex: 1;
+    display: flex; /* Flexbox for alignment */
+    gap: 1rem; /* Spacing between the images */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.home-img img {
+    max-height: 150px; /* Fixed height for images */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 1rem;
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1rem);
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">X-OR</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <th:block th:if="${user == NULL}">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/signin">Login</a>
+          </li>
+        </th:block>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main Section -->
+<section class="home" id="home">
+    <div class="home-content">
+    	<div>
+           <h2 class="breaking-news-headline">Sign up, verify your email, and unlock your account instantly!</h2>
+           <h2 class="breaking-news-headline1">If you try wrong credentials, you won't login after 24 hours.</h2>
+        </div>
+    	<br><br>
+        <h3>Hello, It's Me</h3>
+        <h2>Spring-Security</h2>
+        <br><br>
+        <p>Welcome to the Spring Security. Here you can register, sign in, and manage your profile easily.</p>
+    </div>
+    <div class="home-img">
+        <img src="/images/s-1.jpg" alt="User Image">
+        <img src="/images/me.png" alt="User Image">
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
